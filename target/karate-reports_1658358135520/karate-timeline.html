@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/resources\/Features\/Seacurty-test[1:3]","start":1658358086361,"end":1658358088157,"title":"src\/test\/resources\/Features\/Seacurty-test[1:3] 19:01:26.361-19:01:28.157 generate token with valid user password"},{"id":2,"group":1,"content":"src\/test\/resources\/Features\/Seacurty-test[2:11]","start":1658358088164,"end":1658358088499,"title":"src\/test\/resources\/Features\/Seacurty-test[2:11] 19:01:28.164-19:01:28.499 generate token with invalid user password"},{"id":3,"group":1,"content":"src\/test\/resources\/Features\/Seacurty-test[3:21]","start":1658358088504,"end":1658358089284,"title":"src\/test\/resources\/Features\/Seacurty-test[3:21] 19:01:28.504-19:01:29.284 valid token"},{"id":4,"group":1,"content":"src\/test\/resources\/Features\/Seacurty-test[4:35]","start":1658358089289,"end":1658358089624,"title":"src\/test\/resources\/Features\/Seacurty-test[4:35] 19:01:29.289-19:01:29.624 verify invaid token"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
